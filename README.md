@@ -40,6 +40,6 @@ IPublisher üstünden gelen bileşen bağımlılıklarını tercihe bağlı kull
 
 ## view-injection: Asp.Net Core MVC 6 ve Sonrasına Özgü
 
-View ile Controller logic'lerini ayrıştırmak istediğimiz durumlarda işe yarayan bir tekniktir. View tarafındaki @inject kullanımına ve Startup->ConfigureServices metodundaki kullanıma dikkat edelim.
+View ile Controller logic'lerini ayrıştırmak istediğimiz durumlarda işe yarayan bir tekniktir. View tarafında DataCollectorService için @inject kullanımına ve Startup->ConfigureServices metodundaki Transient kullanımına dikkat edelim.
 
 [https://github.com/buraksenyurt/hands-on-aspnetcore-di/tree/view-injection](https://github.com/buraksenyurt/hands-on-aspnetcore-di/tree/view-injection)
