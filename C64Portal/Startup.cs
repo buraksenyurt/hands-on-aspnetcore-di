@@ -1,3 +1,4 @@
+using C64Portal.Agent;
 using C64Portal.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,6 +23,7 @@ namespace C64Portal
             services.AddControllersWithViews();
 
             services.AddTransient<IGameRepository, GameRepository>();
+            services.AddTransient<DataCollectorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Game>
+@inject C64Portal.Agent.DataCollectorService dataCollectorService
 
 <div>
     <h2>Envanterdeki C64 Oyunları</h2>
     <hr />
+    <h3>Current active user count is @await dataCollectorService.GetActiveUserCount() </h3>
     <table>
         <thead>
             <tr>
