@@ -19,3 +19,13 @@ dotnet sln add C64Portal
 Bağımlılık ihlali GameController içerisinde, GameRepository sınıfının örneklendiği yer.
 
 ## constructor-injection: Constructor Injection Uygulanmış Hal
+
+Bir nesnenin oluşturulurken bağımlı olduğu diğer bileşenleri arayüz üstünden almasına odaklanır. GameManager'ı, GameController içerisinde nasıl kullandığımıza ve Startup->ConfigureServices metoduna odaklanalım.
+
+## method-injection: Method Injection Uygulanmış Hal
+
+Bir metodun bağımlı olduğu nesne çözümlemesinin metoda arayüz referansı olarak çekilerek sağlanmasını ele alır. IPublisher ve RabbitPublisher tipleri ile GameController->Create metoduna odaklanalım.
+
+## property-injection: Property Injection Uygulanmış Hal
+
+IPublisher üstünden gelen bileşen bağımlılıklarını tercihe bağlı kullandırmak istediğimiz durumdaki senaryo için.
