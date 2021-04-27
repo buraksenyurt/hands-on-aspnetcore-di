@@ -27,7 +27,8 @@ namespace C64Portal.Controllers
         [HttpPost]
         public IActionResult Create(Game game)
         {
-            _gameRepository.Create(game, new RabbitPublisher());
+            _gameRepository.Publisher = new RabbitPublisher();
+            _gameRepository.Create(game);
             return RedirectToAction("Index");
         }
     }

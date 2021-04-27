@@ -7,6 +7,7 @@ namespace C64Portal.Data
     public class GameRepository
         : IGameRepository
     {
+        public IPublisher Publisher { get; set; }
         public IEnumerable<Game> GetAllGames()
         {
             return new List<Game>
@@ -17,9 +18,10 @@ namespace C64Portal.Data
             };
         }
 
-        public Game Create(Game game, IPublisher publisher)
+        public Game Create(Game game)
         {
-            publisher.Send("A new game has been added to inventory");
+            if (Publisher != default)
+                Publisher.Send("A new game has been added to inventory");
             return game;
         }
     }
