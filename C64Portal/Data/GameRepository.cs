@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace C64Portal.Data
 {
     public class GameRepository
+        :IGameRepository
     {
         public IEnumerable<Game> GetAllGames()
         {
