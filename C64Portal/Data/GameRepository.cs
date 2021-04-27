@@ -1,10 +1,11 @@
 ﻿using C64Portal.Models;
+using C64Portal.Queue;
 using System.Collections.Generic;
 
 namespace C64Portal.Data
 {
     public class GameRepository
-        :IGameRepository
+        : IGameRepository
     {
         public IEnumerable<Game> GetAllGames()
         {
@@ -14,6 +15,12 @@ namespace C64Portal.Data
                 new Game{ Id=2, Title="Prince of Persia",ListPrice=9.45M },
                 new Game{ Id=3, Title="Prince of Persia",ListPrice=9.45M }
             };
+        }
+
+        public Game Create(Game game, IPublisher publisher)
+        {
+            publisher.Send("A new game has been added to inventory");
+            return game;
         }
     }
 }
