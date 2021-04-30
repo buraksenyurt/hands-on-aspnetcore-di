@@ -1,5 +1,6 @@
 ﻿using C64Portal.Models;
 using C64Portal.Queue;
+using System;
 using System.Collections.Generic;
 
 namespace C64Portal.Data
@@ -7,7 +8,17 @@ namespace C64Portal.Data
     public class GameRepository
         : IGameRepository
     {
+        public Guid InstanceID { get; set; }
         public IPublisher Publisher { get; set; }
+
+
+        public GameRepository() :this(Guid.NewGuid())
+        {
+        }
+        public GameRepository(Guid instanceID)
+        {
+            InstanceID = instanceID;
+        }
         public IEnumerable<Game> GetAllGames()
         {
             return new List<Game>
