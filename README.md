@@ -43,3 +43,15 @@ IPublisher üstünden gelen bileşen bağımlılıklarını tercihe bağlı kull
 View ile Controller logic'lerini ayrıştırmak istediğimiz durumlarda işe yarayan bir tekniktir. View tarafında DataCollectorService için @inject kullanımına ve Startup->ConfigureServices metodundaki Transient kullanımına dikkat edelim.
 
 [https://github.com/buraksenyurt/hands-on-aspnetcore-di/tree/view-injection](https://github.com/buraksenyurt/hands-on-aspnetcore-di/tree/view-injection)
+
+## lifetimes: DI Servis Yaşam Ömürlerini Anlamak Üzerine
+
+Servisleri AddTransient, AddScoped ve AddSingleton olarak ekleyebiliyoruz. Aradaki farkları görmek için eklenmiş branch'tir.
+
+[https://github.com/buraksenyurt/hands-on-aspnetcore-di/tree/lifetimes](https://github.com/buraksenyurt/hands-on-aspnetcore-di/tree/lifetimes)
+
+ ![./assets/screenshot_1.png](./assets/screenshot_1.png)
+
+Excel üstündeki GUID'ler, örneklenen GameRepository nesnesine aittir. Farklı yaşam ömürleri için nasıl ele alındığını gösterir.
+
+ ![./assets/screenshot_2.png](./assets/screenshot_2.png)
